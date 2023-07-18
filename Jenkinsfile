@@ -27,11 +27,12 @@ pipeline{
         }
         stage('tag deployment')
         {
-            when {
+           // when {
                // buildingTag()
-               tag pattern : "v\\d{1,2}.\\d{1,2}.\\d{1,2}"
-            }
+              // tag pattern : "v\\d{1,2}.\\d{1,2}.\\d{1,2}"
+            //}
             steps {
+                echo "${TAG_NAME}"
                 echo "deploying tag"
             }
         }
