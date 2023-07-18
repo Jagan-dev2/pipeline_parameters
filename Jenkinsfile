@@ -16,8 +16,10 @@ pipeline{
         stage("Deploy to Prod")
         {
             when{
+                anyOf {
                 branch 'Prod'
                  environment (name : DEPLOY_TO,value : 'Prod')
+                }
                 }
             steps{           
             echo "Deploy into prod branch"
