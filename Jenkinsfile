@@ -1,28 +1,22 @@
 pipeline{
     agent any
-      parameters{
-                string (
-                    name : "PERSON",
-                    defaultValue : "Mohan",
-                    description : "variable value from input"
-                )
-                }
-           environment{
-                //Global variables
-                name = "Jagan from global variable"
-                psw = "***"
-                     }
-    stages {
-        stage("Build")
+    environment {
+        DEPLOY_TO : "Prod"
+    }
+    stages{
+        stage('Deploy to main')
         {
-            steps {
-               echo "${name}"
-                echo "${params.PERSON}"
-                  }
+        when(branch 'main')
+        steps{            
+            echo "Deploy into main branch"
         }
-          
-                         
-            }
-        
-    
+        }
+        stage("Deploy to Prod")
+        {
+            when(branch 'Prod')
+            steps{           
+            echo "Deploy into main branch"
+        }
+        }
+    }
 }
