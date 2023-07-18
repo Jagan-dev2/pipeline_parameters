@@ -17,7 +17,7 @@ pipeline{
         {
             steps {
                echo "${name}"
-                echo "${params.name}"
+                echo "${params.PERSON}"
                   }
         }
           
