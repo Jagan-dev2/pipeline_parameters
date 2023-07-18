@@ -29,7 +29,7 @@ pipeline{
         {
             when {
                // buildingTag()
-               tag pattern : "v\\d{1,2}.\\d{1,2}.\\d{1,2}" comparator : "REGEXP"
+               tag pattern : "v\\d{1,2}.\\d{1,2}.\\d{1,2}", comparator : "REGEXP"
             }
             steps {
                 echo TAG_NAME
