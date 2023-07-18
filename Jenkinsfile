@@ -32,8 +32,9 @@ pipeline{
               // tag pattern : "v\\d{1,2}.\\d{1,2}.\\d{1,2}"
             //}
             steps {
-                echo "${TAG_NAME}"
+                //echo "${TAG_NAME}"
                 echo "deploying tag"
+                sh "printenv"
             }
         }
         }
