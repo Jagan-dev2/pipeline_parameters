@@ -12,7 +12,7 @@ pipeline{
                 string (
                     name : "name",
                     defaultValue : "Mohan"
-                    discription : "variable value from input"
+                    description : "variable value from input"
                 )
                 echo "${name}"
                 echo "${params.name}"                
