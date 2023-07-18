@@ -1,21 +1,25 @@
 pipeline{
     agent any
-    stages {
-        stage("Build")
-        {
-            environment{
-                //Global variables
-                name = "Jagan from global variable"
-                psw = "***"
-            }
-            parameters{
+      parameters{
                 string (
-                    name : "name",
+                    name : "PERSON",
                     defaultValue : "Mohan",
                     descritpion : "variable value from input"
                 )
-                echo "${name}"
-                echo "${params.name}"                
+           environment{
+                //Global variables
+                name = "Jagan from global variable"
+                psw = "***"
+    stages {
+        stage("Build")
+        {
+            steps {
+               echo "${name}"
+                echo "${params.name}"
+            }
+            }
+          
+                         
             }
         }
     }
