@@ -6,14 +6,14 @@ pipeline{
     stages{
         stage('Deploy to main')
         {
-        when(branch 'main')
+        when{branch 'main'}
         steps{            
             echo "Deploy into main branch"
         }
         }
         stage("Deploy to Prod")
         {
-            when(branch 'Prod')
+            when{branch 'Prod'}
             steps{           
             echo "Deploy into main branch"
         }
