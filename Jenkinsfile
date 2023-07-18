@@ -24,6 +24,15 @@ pipeline{
             steps{           
             echo "Deploy into prod branch"
         }
+        stage('tag deployment')
+        {
+            when {
+                buildingTag()
+            }
+            steps {
+                echo "deploying tag"
+            }
+        }
         }
     }
 }
