@@ -17,7 +17,7 @@ pipeline{
         {
             when{
                 anyOf {
-                branch 'Prod'
+                BRANCH_NAME == /(Prods|mains)/
                  environment (name : DEPLOY_TO,value : 'Prod')
                 }
                 }
