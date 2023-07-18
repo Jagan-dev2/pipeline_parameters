@@ -11,8 +11,8 @@ pipeline{
             parameters{
                 string (
                     name : "name",
-                    defaultValue : "Mohan"
-                    description : "variable value from input"
+                    defaultValue : "Mohan",
+                    descritpion : "variable value from input"
                 )
                 echo "${name}"
                 echo "${params.name}"                
