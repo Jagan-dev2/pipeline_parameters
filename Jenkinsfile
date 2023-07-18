@@ -4,7 +4,7 @@ pipeline{
                 string (
                     name : "PERSON",
                     defaultValue : "Mohan",
-                    descritpion : "variable value from input"
+                    description : "variable value from input"
                 )
                 }
            environment{
